@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="widelix">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/date.format.js"></script>
+    <script src="/js/widelix.js"></script>
+    <script src="/js/menus.js"></script>
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/widelix.css">
+
+    <title>Made with Phoenix</title>  </head>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+        <div class="widelix" ng-controller="ClockController">
+            <H2>
+            <a href="widelix.html">
+            <img  src="img/eco-green-machine-icon-32-183455.png"/></a>
+           <b>WIDELIX</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <font style="color:blue">{{clock.now}}</font>
+            </H2>  
+        </div>
+
+        <ul class="nav nav-pills pull-right">
+        <li><a href="widelix.html">
+        Start Widelix</a></li>
+        </ul>
+        <br>Widelix is Made With<br>
+        <span class="logo"></span>
+    </div>
+
+      <%= @inner %>
+
+      <div class="footer">
+        <p><a href="/">erlygo</a></p>
+      </div>
+
+  </div> <!-- /container -->
+</body>
+</html>

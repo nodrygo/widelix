@@ -1,0 +1,87 @@
+<!doctype html>
+<html ng-app="widelix">
+  <head>
+    <meta charset="UTF-8">
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-resource.min.js"></script>
+    <script src="js/angular.treeview.min.js"></script>
+    <script src="js/date.format.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="bower_components/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/codemirror/theme/twilight.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/codemirror/theme/cobalt.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/codemirror/theme/monokai.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/codemirror/theme/elegant.css">
+    <script type="text/javascript" src="bower_components/codemirror/lib/codemirror.js"></script>
+    <script type="text/javascript" src="bower_components/codemirror/mode/scheme/scheme.js"></script>
+    <script type="text/javascript" src="bower_components/codemirror/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="bower_components/codemirror/mode/ruby/ruby.js"></script>
+    <script type="text/javascript" src="bower_components/codemirror/mode/javascript/javascript.js"></script>
+    <script type="text/javascript" src="bower_components/codemirror/mode/coffeescript/coffeescript.js"></script>
+    <script type="text/javascript" src="bower_components/codemirror/mode/erlang/erlang.js"></script>
+    <script type="text/javascript" src="bower_components/codemirror/mode/elixir/elixir.js"></script>
+    <!--script type="text/javascript" src="bower_components/angular/angular.js"></script-->
+    <script type="text/javascript" src="bower_components/angular-ui-codemirror/ui-codemirror.js"></script>
+
+    <script src="js/controllers/widelix.js"></script>
+    <script src="js/controllers/menusController.js"></script>
+    <script src="js/controllers/treeviewController.js"></script>
+
+    <script src="js/services/datasFactory.js"></script>
+    <script src="js/services/filesService.js"></script>
+
+    <link rel="stylesheet" href="css/widelix.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/angular.treeview.css">
+  </head>
+
+  <body ng-controller="MainController">
+    <div class="widedit" ng-controller="ClockController">
+    <div style="float: left; width:80%;">
+    <H2>
+    <img  src="img/eco-green-machine-icon-32-183455.png"/>
+    <b>WIDELIX</b></H2>
+    </div>
+    <div style="float: right;width:20%;">
+    <H4><font style="color:blue">{{clock.now}}</font></H4>
+    <font style="color:dargreen">USER login</font>
+    </div>
+   </div>
+
+   <div >
+      <div class="main-menus" ng-controller="MenuController"><H3>{{mainmenu}}</H3>
+   </div>
+   <div>
+   <div style="float: left; width:25%;">
+    <div ng-controller="treeviewController">
+        <div 
+            data-angular-treeview="true"
+            data-tree-id="fileName"
+            data-tree-model="treedata"
+            data-node-id="id"
+            data-node-label="label"
+            data-node-children="children" >
+        </div>
+        <div style="margin:10px 0 30px 0; padding:10px; background-color:#EEEEEE; border-radius:5px; font:12px Tahoma;">
+          <span ><b>Selected File</b> : {{fileName.currentNode.label}}</span>
+        </div>
+    </div>
+   </div>
+
+   <tabset>
+      <tab heading="Markup">
+        <div ng-controller="codeMirrorController" > 
+        Langage Mode : <select ng-model="mode" ng-options="m for m in modes" ng-change="modeChanged()"></select>
+        &nbsp;&nbsp;Theme : <select ng-model="theme" ng-options="m for m in themes" ng-change="themeChanged()"></select>
+        &nbsp;&nbsp;Current File: {{datas.currentFileName}}
+        <br>
+        <ui-codemirror ui-codemirror-opts="cmOption" ng-model="cmModel"></ui-codemirror>
+        <br>
+        </div>
+      </tab>
+   <tabset>
+  </div>
+
+   </div>
+  </body>
+</html>

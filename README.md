@@ -13,12 +13,16 @@ TO create à production release [see this](https://github.com/lancehalvorsen/pho
 
 ## contribs  
 in no special order
-[ELIXIR](http://elixir-lang.org/)
-[PHOENIX](https://github.com/phoenixframework/phoenix)
-[PHOENIX Guides](https://github.com/lancehalvorsen/phoenix-guides)
-[AngularJs](https://angularjs.org/)
-[codemirror elixir syntax](https://github.com/halohalospecial/codemirror-elixir-mode)
-[Agular UI codemirror](https://github.com/angular-ui/ui-codemirror)
+[ELIXIR](http://elixir-lang.org/)    
+[PHOENIX](https://github.com/phoenixframework/phoenix)    
+[PHOENIX Guides](https://github.com/lancehalvorsen/phoenix-guides)    
+[AngularJs](https://angularjs.org/)    
+[codemirror elixir syntax](https://github.com/halohalospecial/codemirror-elixir-mode)    
+* put in __priv/static/bower_components/codemirror/mode/elixir__
+[Agular UI codemirror](https://github.com/angular-ui/ui-codemirror)    
+* install with: __bower install angular-ui-codemirror\#bower__
+
+
 
 
 
