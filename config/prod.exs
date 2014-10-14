@@ -12,9 +12,9 @@ use Mix.Config
 # disk for the key and cert.
 
 config :phoenix, Widelix.Router,
-  port: System.get_env("PORT"),
+  port: 4001, # System.get_env("PORT"),
   ssl: false,
-  host: "example.com",
+  host: "erlygo.fr",
   secret_key_base: "BPAdn9KNttOskWBoUAVjFVP5BXIASrkWdAcCXMWgE/XikBWulE2d2wtSzqUqpOahPI5tHp32UaVZsNAcPIC2+Q=="
 
 config :logger, :console,

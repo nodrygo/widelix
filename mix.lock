@@ -1,5 +1,7 @@
-%{"cowboy": {:package, "1.0.0"},
+%{"conform": {:package, "0.10.5"},
+  "cowboy": {:package, "1.0.0"},
   "cowlib": {:package, "1.0.0"},
+  "exrm": {:package, "0.14.11"},
   "linguist": {:package, "0.1.2"},
   "phoenix": {:git, "git://github.com/phoenixframework/phoenix.git", "cb006028f88230f0471d47fe0c649a294aa6c67a", []},
   "plug": {:package, "0.8.1"},

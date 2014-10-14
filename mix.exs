@@ -23,6 +23,8 @@ defmodule Widelix.Mixfile do
   # Type `mix help deps` for examples and options
   defp deps do
     [{:phoenix, github: "phoenixframework/phoenix"},
-     {:cowboy, "~> 1.0.0"}]
+     {:cowboy, "~> 1.0.0"},
+     { :exrm, "~> 0.14.2" }]
+
   end
 end
