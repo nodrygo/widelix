@@ -1,12 +1,12 @@
-defmodule Widelix.UserController do
+defmodule Widelix.FilesController do
   use Phoenix.Controller
-
+  alias Phoenix.FilesModel, as: FM
   alias Poison, as: JSON
   
   plug :action
   
   def index(conn, _params) do
-    json conn, JSON.encode!("Repo.all(User)")
+    json conn, JSON.encode!(getAllFiles)
   end
 
   def show(conn, %{"id" => id}) do
@@ -32,6 +32,13 @@ defmodule Widelix.UserController do
          # json conn, JSON.encode!("PUT UPDATE")
   end
 
-
+#### 
+  def getAllFiles(user \\"demo") do
+    base_path =  Application.get_all_env(:widelix)[:files][:basePath]
+    for f <- File.ls! Path.join(base_path,user) do
+        IO.puts "File is #{f}"
+        f
+    end
+  end
  
 end

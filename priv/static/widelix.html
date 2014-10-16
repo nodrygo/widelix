@@ -24,11 +24,15 @@
     <script type="text/javascript" src="bower_components/angular-ui-codemirror/ui-codemirror.js"></script>
 
     <script src="js/controllers/widelix.js"></script>
+
+    <script src="js/services/datasFactory.js"></script>
+    <!--script src="js/services/filesService.js"></script-->
+
+    <script src="js/controllers/mainController.js"></script>
     <script src="js/controllers/menusController.js"></script>
     <script src="js/controllers/treeviewController.js"></script>
 
-    <script src="js/services/datasFactory.js"></script>
-    <script src="js/services/filesService.js"></script>
+
 
     <link rel="stylesheet" href="css/widelix.css">
     <link rel="stylesheet" href="css/app.css">
@@ -44,7 +48,7 @@
     </div>
     <div style="float: right;width:20%;">
     <H4><font style="color:blue">{{clock.now}}</font></H4>
-    <font style="color:dargreen">USER login</font>
+    <font style="color:dargreen">USER {{userStatus}}</font>
     </div>
    </div>
 

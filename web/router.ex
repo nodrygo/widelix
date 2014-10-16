@@ -4,17 +4,16 @@ defmodule Widelix.Router do
   scope "/" do
     # Use the default browser stack.
     pipe_through :browser
-
     get "/", Widelix.PageController, :index, as: :pages
-    resources "/users", Widelix.UserController
   end
 
-  scope path: "/admin", alias: YourApp.Admin, helper: "admin" do
-    resources "/users", UserController
-  end
-  
-  # Other scopes may use custom stacks.
-  # scope "/api" do
-  #   pipe_through :api
+  scope path: "/api", alias: Widelix, helper: "api" do
+    resources "users", UserController
+    resources "files", FilesController
+  end 
+
+  # scope path: "/admin", alias: Widelix.Admin, helper: "admin" do
+  #   resources "/users", UserController
   # end
+  
 end
